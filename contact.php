@@ -27,7 +27,7 @@
                 <h5 style="color: blanchedalmond; font-weight: bold;"><i class="fa fa-phone"></i> (00) 0000-0000</h5>
             </div>
             <div class="col-md-4 text-center">
-                <h5 style="color: blanchedalmond; font-weight: bold;"><i class="fa fa-map-marker"></i> RN 117, Seb. Maltêz</h5>
+            <h5 style="color: blanchedalmond; font-weight: bold;"><a href="email" style="color: blanchedalmond; font-weight: bold;"><i class="fa fa-sign-in"></i> Login</a></h5>
             </div>
         </div>
     </div>
@@ -155,7 +155,7 @@
 	              </div>
 	              <div class="form-group col-lg-12">
 	                <input type="hidden" name="save" value="contact">
-	                <button type="submit" class="btn btn-primary">Enviar</button>
+	                <button type="submit" class="btn btn-danger">Enviar</button>
 	              </div>
               </div>
             </form>

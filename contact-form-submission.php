@@ -13,19 +13,19 @@ $message = $_POST['contact_message'];
 	
 // check that a name was entered
 if (empty($name))
-    $error = 'You must enter your name.';
+    $error = 'Você deve digitar o seu nome.';
 // check that an email address was entered
 elseif (empty($email_address)) 
-    $error = 'You must enter your email address.';
+    $error = 'Você deve digitar seu endereço de e-mail.';
 // check for a valid email address
 elseif (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email_address))
-    $error = 'You must enter a valid email address.';
+    $error = 'Você deve inserir um endereço de email válido.';
 // check that a phone number was entered
 if (empty($phone))
-    $error = 'You must enter your phone number.';
+    $error = 'Você deve digitar seu número de telefone.';
 // check that a message was entered
 elseif (empty($message))
-    $error = 'You must enter a message.';
+    $error = 'Você deve inserir uma mensagem.';
 		
 // check if an error was found - if there was, send the user back to the form
 if (isset($error)) {
@@ -43,9 +43,9 @@ $email_content .= "Message:\n\n$message";
 	
 // send the email
 //ENTER YOUR INFORMATION BELOW FOR THE FORM TO WORK!
-mail ('YOUR-EMAIL-ADDRESS@YOUR-DOMAIN.com', 'YOUR WEBSITE NAME - Contact Form Submission', $email_content, $headers);
+mail ('atendimento@grupojpx.com', 'Grupo JPX - Contact Form Submission', $email_content, $headers);
 	
 // send the user back to the form
-header('Location: contact.html?s='.urlencode('Thank you for your message.')); exit;
+header('Location: contact.html?s='.urlencode('Obrigado pela sua mensagem.')); exit;
 
 ?>
