@@ -1,33 +1,33 @@
 <?php
 
-// check for form submission - if it doesn't exist then send back to contact form
+// verifique o envio do formulário - se ele não existir, envie novamente para o formulário de contato
 if (!isset($_POST['save']) || $_POST['save'] != 'contact') {
     header('Location: contact.php'); exit;
 }
 	
-// get the posted data
+// obter os dados publicados
 $name = $_POST['contact_name'];
 $email_address = $_POST['contact_email'];
 $phone = $_POST['contact_phone'];
 $message = $_POST['contact_message'];
 	
-// check that a name was entered
+// verifique se um nome foi digitado
 if (empty($name))
     $error = 'Você deve digitar o seu nome.';
-// check that an email address was entered
+// verifique se um endereço de e-mail foi inserido
 elseif (empty($email_address)) 
     $error = 'Você deve digitar seu endereço de e-mail.';
-// check for a valid email address
+// verifique se há um endereço de email válido
 elseif (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email_address))
     $error = 'Você deve inserir um endereço de email válido.';
-// check that a phone number was entered
+// verifique se um número de telefone foi digitado
 if (empty($phone))
     $error = 'Você deve digitar seu número de telefone.';
-// check that a message was entered
+// verifique se uma mensagem foi inserida
 elseif (empty($message))
     $error = 'Você deve inserir uma mensagem.';
 		
-// check if an error was found - if there was, send the user back to the form
+// verifique se um erro foi encontrado - se houver, envie o usuário de volta ao formulário
 if (isset($error)) {
     header('Location: contact.php?e='.urlencode($error)); exit;
 }
@@ -35,15 +35,15 @@ if (isset($error)) {
 $headers = "From: $email_address\r\n"; 
 $headers .= "Reply-To: $email_address\r\n";
 
-// write the email content
+//escreva o conteúdo do email
 $email_content = "Name: $name\n";
 $email_content .= "Email Address: $email_address\n";
 $email_content .= "Phone Number: $phone\n";
 $email_content .= "Message:\n\n$message";
 	
-// send the email
-//ENTER YOUR INFORMATION BELOW FOR THE FORM TO WORK!
-mail ('atendimento@grupojpx.com', 'Grupo JPX - Contact Form Submission', $email_content, $headers);
+// envie o email
+//Insira suas informações abaixo para que o formulário funcione!
+mail ('atendimento@grupojpx.com', 'Grupo JPX - Envio do formulário de contato', $email_content, $headers);
 	
 // send the user back to the form
 header('Location: contact.html?s='.urlencode('Obrigado pela sua mensagem.')); exit;

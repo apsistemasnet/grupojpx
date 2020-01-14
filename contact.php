@@ -126,8 +126,9 @@
       <div class="row">
 
         <div class="col-sm-8">
-          <h3>Vamos entrar em contato!</h3>
-          <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <h3>Central de Relacionamento!</h3>
+          <p><strong>A gente quer ouvir você.</strong></p>
+          <p>Então se tiver dúvidas, sugestões, ou qualquer outra coisa que queira nos falar, este é o espaço.</p>
 			<?php  
 
                 // check for a successful form post  
